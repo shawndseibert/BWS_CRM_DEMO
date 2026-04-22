@@ -3,6 +3,12 @@ const screens = document.querySelectorAll('.screen');
 const screenTitle = document.getElementById('screen-title');
 const themeToggle = document.getElementById('theme-toggle');
 const brandLogo = document.querySelector('.brand-logo');
+const demoVersionTag = document.getElementById('demo-version-tag');
+
+if (demoVersionTag) {
+  const demoVersion = document.body.dataset.demoVersion || '1.0';
+  demoVersionTag.textContent = `DEMO v${demoVersion}`;
+}
 
 const applyTheme = (theme) => {
   document.body.dataset.theme = theme;

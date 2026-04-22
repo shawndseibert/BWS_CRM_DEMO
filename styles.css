@@ -1,11 +1,11 @@
 :root {
   --ink: #cccccc;
   --bg: #121212;
-  --panel: #1a1b1e;
+  --panel: #181b22;
   --steel: #007acc;
   --signal: #d7ba7d;
   --mint: #2d2d30;
-  --line: #4b4f55;
+  --line: #475062;
   --cash: #4fc1ff;
   --account: #89d185;
   --text-strong: #e5e5e5;
@@ -13,37 +13,37 @@
   --text-soft: #a6a6a6;
   --table-text: #d4d4d4;
   --table-head: #9da3a8;
-  --surface-elevated: #26292d;
-  --surface-hover: #303338;
+  --surface-elevated: #232934;
+  --surface-hover: #2b3240;
   --surface-input: #1f1f1f;
-  --surface-stage: #24282c;
-  --content-border: #444a50;
-  --subtle-border: #3e444b;
+  --surface-stage: #222833;
+  --content-border: #404a5b;
+  --subtle-border: #3b4453;
   --tag-text: #9cdcfe;
   --tag-bg: rgba(0, 122, 204, 0.2);
   --dot: #569cd6;
   --shadow-strong: rgba(0, 0, 0, 0.35);
   --shadow-card: rgba(0, 0, 0, 0.25);
-  --card-highlight: rgba(150, 160, 174, 0.04);
+  --card-highlight: rgba(136, 162, 206, 0.05);
   --scanline: rgba(255, 255, 255, 0.015);
-  --bg-glow-1: #28313a;
-  --bg-glow-2: #333c47;
-  --bg-radial-1: #242b33;
-  --bg-radial-2: #1c242d;
+  --bg-glow-1: #253243;
+  --bg-glow-2: #2d3a4b;
+  --bg-radial-1: #212d3d;
+  --bg-radial-2: #182434;
   --grid-line: rgba(170, 170, 170, 0.02);
-  --sidebar-bg: #1a1b1f;
-  --content-bg: rgba(21, 23, 27, 0.92);
+  --sidebar-bg: #191d26;
+  --content-bg: rgba(18, 22, 31, 0.92);
   --nav-shadow: inset 2px 0 0 0 #007acc;
   --button-active-bg: #094771;
   --vendor-bg: #2a2d2e;
-  --input-border: #53595f;
+  --input-border: #4b5668;
   --paper-badge-bg: #0b3a5a;
   --paper-badge-border: #007acc;
   --stage-done-border: #5aa86d;
   --stage-done-bg: #1f3324;
   --stage-current-border: #007acc;
   --stage-current-bg: #10314a;
-  --note-border: #474d55;
+  --note-border: #424d5e;
   --logo-glow: rgba(95, 164, 255, 0.1);
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --sans: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -225,10 +225,13 @@ body {
 .content-shell {
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background: var(--content-bg);
   border: 1px solid var(--content-border);
   border-radius: 8px;
   padding: 1rem;
+  min-height: calc(100vh - 2rem);
   backdrop-filter: blur(8px);
 }
 
@@ -333,30 +336,15 @@ body {
   font-size: 1.45rem;
 }
 
-.topbar-info {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  color: var(--text-soft);
-  font-size: 0.84rem;
-}
-
 .demo-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
-  margin-top: 1.15rem;
+  margin-top: auto;
   padding-top: 0.85rem;
   border-top: 1px solid var(--subtle-border);
   animation: fadeIn 220ms ease;
-}
-
-.dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 999px;
-  background: var(--dot);
 }
 
 .screen {
