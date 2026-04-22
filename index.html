@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BWS CRM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <img
+            src="assets/builders-window-supply-logo-white.svg"
+            alt="Builders Window Supply logo"
+            class="brand-logo"
+            data-dark-src="assets/builders-window-supply-logo-white.svg"
+            data-light-src="assets/builders-window-supply-logo.svg"
+            onerror="this.style.display='none';document.getElementById('brand-fallback').style.display='grid';"
+          />
+          <div id="brand-fallback" class="brand-fallback" aria-hidden="true">BWS</div>
+        </div>
+        <nav class="nav-list" aria-label="Sections">
+          <button class="nav-btn active" data-target="dashboard">Dashboard</button>
+          <button class="nav-btn" data-target="customers">Customers</button>
+          <button class="nav-btn" data-target="projects">Projects</button>
+          <button class="nav-btn" data-target="quote-builder">Quote Builder</button>
+          <button class="nav-btn" data-target="quote-preview">Quote Preview</button>
+          <button class="nav-btn" data-target="workflow">Quote to Order</button>
+          <button class="nav-btn" data-target="delivery">Delivery Ticket</button>
+        </nav>
+      </aside>
+
+      <section class="content-shell">
+        <header class="topbar">
+          <div>
+            <h2 id="screen-title">Dashboard</h2>
+          </div>
+          <label class="theme-switch" for="theme-toggle" aria-label="Toggle light theme">
+            <span class="theme-switch-track">
+              <input id="theme-toggle" type="checkbox" />
+              <span class="theme-switch-thumb"></span>
+            </span>
+          </label>
+        </header>
+
+        <article id="dashboard" class="screen active">
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <p>Open Quotes</p>
+              <h3>18</h3>
+              <small>5 waiting customer sign-off</small>
+            </div>
+            <div class="kpi-card">
+              <p>Projects In Motion</p>
+              <h3>11</h3>
+              <small>3 with delivery this week</small>
+            </div>
+            <div class="kpi-card">
+              <p>Pending Deliveries</p>
+              <h3>7</h3>
+              <small>2 tablet signature required</small>
+            </div>
+          </div>
+
+          <div class="panel-grid two-col">
+            <section class="panel">
+              <h3>Pipeline Snapshot</h3>
+              <ul class="timeline">
+                <li><strong>Cash Quote</strong> - Ready to send - Riverwalk Remodel</li>
+                <li><strong>Account Quote</strong> - Terms 10 Net 30 - Hallmark Fabrication</li>
+                <li><strong>Order Draft</strong> - Awaiting manager review - Eversteel South</li>
+                <li><strong>Delivery Ticket</strong> - Tablet sign-off pending - Starlight Center</li>
+              </ul>
+            </section>
+            <section class="panel">
+              <h3>What This Demo Covers</h3>
+              <ul class="bullet-list">
+                <li>Customers and project record layout</li>
+                <li>Custom quote line entry with no inventory</li>
+                <li>Cash vs Account visual template styling</li>
+                <li>Quote -> Order/Invoice conversion flow</li>
+                <li>Delivery ticket print and tablet views</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article id="customers" class="screen">
+          <section class="panel">
+            <div class="panel-title-row">
+              <h3>Customer Records</h3>
+              <button class="ghost-btn">+ New Customer</button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Type</th>
+                  <th>Terms</th>
+                  <th>Primary Contact</th>
+                  <th>Last Activity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cash Walk-In #2407</td>
+                  <td><span class="chip cash">Cash</span></td>
+                  <td>Due on receipt</td>
+                  <td>Amy Brenner</td>
+                  <td>Quote drafted today</td>
+                </tr>
+                <tr>
+                  <td>Hallmark Fabrication</td>
+                  <td><span class="chip account">Account</span></td>
+                  <td>10 Net 30</td>
+                  <td>Rafael Kim</td>
+                  <td>Order pending sign-off</td>
+                </tr>
+                <tr>
+                  <td>Starlight Event Center</td>
+                  <td><span class="chip account">Account</span></td>
+                  <td>Net 30</td>
+                  <td>Nicole Hughes</td>
+                  <td>Delivery ticket sent</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </article>
+
+        <article id="projects" class="screen">
+          <section class="panel-grid two-col">
+            <section class="panel">
+              <div class="panel-title-row">
+                <h3>Project Folder</h3>
+                <button class="ghost-btn">Open Project</button>
+              </div>
+              <p class="muted">Project: Riverwalk Remodel / PRJ-1027</p>
+              <ul class="folder-list">
+                <li>Notes: 6 updates</li>
+                <li>Vendor Quote PDFs: 4 files</li>
+                <li>Internal Quote Drafts: 2 versions</li>
+                <li>Customer Quote: Sent v3</li>
+                <li>CAD Drawings: 3 files</li>
+              </ul>
+            </section>
+            <section class="panel">
+              <h3>Attached Files</h3>
+              <ul class="file-list">
+                <li>vendor-alpine-metal-quote.pdf</li>
+                <li>vendor-falcon-hardware.pdf</li>
+                <li>customer-quote-v3.pdf</li>
+                <li>cad-stair-layout-rev2.dwg</li>
+                <li>site-photo-delivery-lane.jpg</li>
+              </ul>
+            </section>
+          </section>
+        </article>
+
+        <article id="quote-builder" class="screen">
+          <section class="panel-grid two-col">
+            <section class="panel">
+              <h3>Vendor Inputs To Combine</h3>
+              <div class="vendor-pills">
+                <button class="vendor-pill active">Alpine Metalworks</button>
+                <button class="vendor-pill">Falcon Hardware</button>
+                <button class="vendor-pill">Union Fabricators</button>
+              </div>
+              <p class="muted">Select vendor references, then compose customer-facing line items manually.</p>
+            </section>
+            <section class="panel">
+              <h3>Quote Type</h3>
+              <div class="toggle-wrap">
+                <button class="toggle-btn active" data-template="cash">Cash Template</button>
+                <button class="toggle-btn" data-template="account">Account Template</button>
+              </div>
+              <p id="template-note" class="muted">Cash format selected (blue/white style).</p>
+            </section>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title-row">
+              <h3>Custom Line Items (No Inventory)</h3>
+              <button id="add-row" class="ghost-btn">+ Add Line</button>
+            </div>
+            <table id="line-table">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Qty</th>
+                  <th>Unit Price</th>
+                  <th>Line Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Custom stainless handrail assembly with powder coat</td>
+                  <td><input value="1" type="number" min="1" class="qty" /></td>
+                  <td><input value="2850" type="number" min="0" class="price" /></td>
+                  <td class="line-total">$2,850.00</td>
+                </tr>
+                <tr>
+                  <td>Installation labor and site cleanup</td>
+                  <td><input value="1" type="number" min="1" class="qty" /></td>
+                  <td><input value="950" type="number" min="0" class="price" /></td>
+                  <td class="line-total">$950.00</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3">Subtotal</td>
+                  <td id="subtotal">$3,800.00</td>
+                </tr>
+              </tfoot>
+            </table>
+          </section>
+        </article>
+
+        <article id="quote-preview" class="screen">
+          <section class="panel-grid two-col">
+            <section class="panel quote-paper cash-look" id="paper-preview">
+              <div class="paper-header">
+                <h3>Customer Quote Preview</h3>
+                <span id="paper-badge">Cash / Due on Receipt</span>
+              </div>
+              <p>Customer: Cash Walk-In #2407</p>
+              <p>Project: Riverwalk Remodel / Stair Rail Scope</p>
+              <p>Total: <strong id="paper-total">$3,800.00</strong></p>
+              <hr />
+              <p class="muted">Terms and notes can be customized by template style.</p>
+            </section>
+            <section class="panel">
+              <h3>Template Controls</h3>
+              <ul class="bullet-list">
+                <li>Logo, accent color, and header text</li>
+                <li>Cash vs Account terms block</li>
+                <li>Signature field placement</li>
+                <li>Print-friendly version for ticket stock</li>
+              </ul>
+              <button id="switch-template" class="ghost-btn">Switch Template Style</button>
+            </section>
+          </section>
+        </article>
+
+        <article id="workflow" class="screen">
+          <section class="panel">
+            <h3>Quote -> Order/Invoice</h3>
+            <div class="stage-row">
+              <div class="stage done">1. Drafted</div>
+              <div class="stage done">2. Sent</div>
+              <div class="stage current" id="approval-stage">3. Awaiting Sign-Off</div>
+              <div class="stage">4. Converted To Order</div>
+            </div>
+            <div class="panel-title-row">
+              <p class="muted">Trigger conversion once customer approves.</p>
+              <button id="convert-btn" class="cta-btn">Simulate Conversion</button>
+            </div>
+            <p id="convert-result" class="muted">No conversion yet. Order number will generate after approval.</p>
+          </section>
+        </article>
+
+        <article id="delivery" class="screen">
+          <section class="panel-grid two-col">
+            <section class="panel">
+              <h3>Delivery Ticket Output</h3>
+              <div class="toggle-wrap">
+                <button class="delivery-btn active" data-mode="print">Dot Matrix Print View</button>
+                <button class="delivery-btn" data-mode="tablet">Tablet Field View</button>
+              </div>
+              <div id="delivery-note" class="note-box">
+                Plain black-and-white layout with compact spacing for carbon-copy ticket stock.
+              </div>
+            </section>
+            <section class="panel">
+              <h3>Tablet Capture</h3>
+              <ul class="bullet-list">
+                <li>Delivery signature collection</li>
+                <li>Photo capture at drop-off</li>
+                <li>Auto-save media to project/order record</li>
+              </ul>
+            </section>
+          </section>
+        </article>
+
+        <footer class="demo-footer">
+          <span class="tag">Week 1 Demo</span>
+          <div class="topbar-info">
+            <span>Live look-and-feel prototype</span>
+            <span class="dot"></span>
+            <span>Updated Apr 21, 2026</span>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

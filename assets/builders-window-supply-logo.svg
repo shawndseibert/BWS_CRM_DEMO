@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 262 100" width="262" height="100">
+  <defs>
+    <style>
+      .brand-blue { fill: #1a3a6b; }
+    </style>
+    <mask id="windowMask">
+      <rect x="4" y="8" width="68" height="68" fill="white"/>
+      <rect x="34" y="8" width="5" height="68" fill="black"/>
+      <rect x="4" y="34" width="68" height="5" fill="black"/>
+    </mask>
+  </defs>
+
+  <rect x="4" y="8" width="68" height="68" class="brand-blue" mask="url(#windowMask)"/>
+
+  <text x="82" y="32"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="22"
+        font-weight="bold"
+        letter-spacing="1"
+        class="brand-blue">Builders</text>
+
+  <text x="78" y="65"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="38"
+        font-weight="bold"
+        letter-spacing="-0.5"
+        class="brand-blue">Window</text>
+
+  <text x="82" y="88"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="22"
+        font-weight="bold"
+        letter-spacing="1"
+        class="brand-blue">Supply</text>
+
+  <text x="222" y="88"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="13"
+        font-style="italic"
+        class="brand-blue">inc.</text>
+</svg>
